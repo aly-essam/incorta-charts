@@ -1,3 +1,31 @@
-<p>
-  criteria works!
-</p>
+<div class="columns-container">
+  <h2>Columns</h2>
+
+  <div cdkDropList #columnsList="cdkDropList" [cdkDropListData]="columnList"
+    [cdkDropListConnectedTo]="[dimension, measure]" class="columns-list" (cdkDropListDropped)="drop($event)">
+    <div class="column-box" [cdkDragData]="column" *ngFor="let column of columnList" cdkDrag>{{column.name}}</div>
+  </div>
+</div>
+
+<div class="criteria-container">
+  <div class="input">
+    <mat-label>Dimension</mat-label>
+  <div cdkDropList #dimension="cdkDropList" [cdkDropListData]="dimensions" class="criteria-list"
+    [cdkDropListEnterPredicate]="dimensionPredicate" (cdkDropListDropped)="drop($event)">
+    <div class="criteria-box" [cdkDragData]="dimension" *ngFor="let dimension of dimensions" cdkDrag>{{dimension.name}}
+      <button  matSuffix  aria-label="Clear" (click)="clearDimension(dimension)">
+        Clear
+      </button>
+    </div>
+  </div>
+</div>
+ <mat-label>Measure</mat-label>
+  <div cdkDropList #measure="cdkDropList" [cdkDropListData]="measures" class="criteria-list"
+    [cdkDropListEnterPredicate]="measurePredicate" (cdkDropListDropped)="drop($event)">
+    <div class="criteria-box" [cdkDragData]="measure" *ngFor="let measure of measures" cdkDrag>{{measure.name}}
+      <button  matSuffix  aria-label="Clear" (click)="clearMeasure(measure)">
+        Clear
+      </button>
+    </div>
+  </div>
+</div>
