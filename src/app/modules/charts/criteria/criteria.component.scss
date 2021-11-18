@@ -1,23 +1,22 @@
 .columns-container {
-    width: 200px;
-    max-width: 100%;
+    width: 25%;
     margin: 0 25px 25px 0;
     display: inline-block;
     vertical-align: top;
+    padding: 20px;
+    height: 100%;
+
   }
   
   .columns-list {
-    border: solid 1px #ccc;
     min-height: 60px;
-    background: white;
-    border-radius: 4px;
     overflow: hidden;
     display: block;
   }
   
   .column-box {
-    padding: 20px 10px;
-    border-bottom: solid 1px #ccc;
+    padding: 10px 15px;
+    border-left: solid 7px #000;
     color: rgba(0, 0, 0, 0.87);
     display: flex;
     flex-direction: row;
@@ -25,29 +24,45 @@
     justify-content: space-between;
     box-sizing: border-box;
     cursor: move;
-    background: white;
-    font-size: 14px;
+    background: #e7e7e7;
+    margin-bottom: 15px;
+    font-size: 18px;
+    transition: all 0.3s;
+    cursor: pointer;
+    &:hover{
+      border-color: #d78b00;
+      color: #d78b00;
+      border-width: 10px;
+    }
   }
   
   .criteria-container {
-    width: 400px;
-    max-width: 100%;
-    margin: 50px 25px 25px 150px;
+    width: 70%;
     display: inline-block;
-    vertical-align: top;
+    padding: 50px;
+    box-sizing: border-box;
   }
   
+  mat-label{
+    display: inline-block;
+    font-weight: bold;
+    width: 18%;
+    vertical-align: middle;
+    font-size: 18px;
+  }
+
   .criteria-list {
     border: solid 1px #ccc;
     min-height: 40px;
     background: white;
-    border-radius: 4px;
     overflow: hidden;
-    display: block;
+    display: inline-block;
+    width: 70%;
+    vertical-align: middle;
   }
   
   .criteria-box {
-    padding: 20px 10px;
+    padding: 10px;
     border-bottom: solid 1px #ccc;
     color: rgba(0, 0, 0, 0.87);
     display: flex;
@@ -56,8 +71,21 @@
     justify-content: space-between;
     box-sizing: border-box;
     cursor: move;
-    background: white;
-    font-size: 14px;
+    background: #e7e7e7;
+    font-size: 18px;
+  }
+
+  .input{
+    margin-bottom: 40px;
+  }
+
+  .clear-btn{
+    background: #d78b00;
+    border: 0;
+    padding: 10px 30px;
+    font-size: 15px;
+    cursor: pointer;
+    color: #fff;
   }
 
   .cdk-drag-preview {
