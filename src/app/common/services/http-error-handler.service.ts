@@ -30,6 +30,7 @@ export class HttpErrorHandler {
 
     return (error: HttpErrorResponse): Observable<T> => {
       console.error(error); // log to console instead
+      alert("GENERAL ERROR HANDLER");
       // Let the app keep running by returning a safe result.
       return of( result );
     };

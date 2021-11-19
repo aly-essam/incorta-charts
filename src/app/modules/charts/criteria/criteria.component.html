@@ -4,6 +4,7 @@
   <div cdkDropList #columnsList="cdkDropList" [cdkDropListData]="columnList"
     [cdkDropListConnectedTo]="[dimension, measure]" class="columns-list" (cdkDropListDropped)="drop($event)">
     <div class="column-box" [cdkDragData]="column" *ngFor="let column of columnList" cdkDrag>{{column.name}}</div>
+    <div *ngIf="!columnList || !columnList.length">No Data available</div>
   </div>
 </div>
 

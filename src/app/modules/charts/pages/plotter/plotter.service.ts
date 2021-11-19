@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Observable, of } from "rxjs/";
+import { Observable } from "rxjs/";
 import { ColumnModel } from "../../models/column.model";
 import { CriteriaModel } from "../../models/criteria.model";
 import { DataModel } from "../../models/data.model";

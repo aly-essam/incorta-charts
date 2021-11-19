@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ChartsModule } from './modules/charts/charts.module';
 import { HttpErrorHandler } from './common/services/http-error-handler.service';
 import { HttpClientModule } from '@angular/common/http';
+import { UtilsService } from './common/services/utils.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     ChartsModule
   ],
-  providers: [HttpErrorHandler],
+  providers: [HttpErrorHandler, UtilsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
