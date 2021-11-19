@@ -20,15 +20,15 @@ export class PlotterComponent implements OnInit {
     this.utilsService.loadIndicator.emit(true);
     this.plotterService.getColumnsList().subscribe(columnList => {
       this.columnList = columnList;
+      this.utilsService.loadIndicator.emit(false);
     });
-    this.utilsService.loadIndicator.emit(false);
   }
 
   onCriteriaCompletion(criteriaModel: CriteriaModel) {
     this.utilsService.loadIndicator.emit(true);
     this.plotterService.getCriteriaResult(criteriaModel).subscribe((criteriaResult: DataModel[]) => {
       this.lineChartData = this.plotterService.prepareLineChartData(criteriaResult, criteriaModel);
+      this.utilsService.loadIndicator.emit(false);
     });
-    this.utilsService.loadIndicator.emit(false);
   }
 }
