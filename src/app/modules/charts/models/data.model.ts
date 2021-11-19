@@ -1,4 +1,4 @@
 export class DataModel {
     name: string;
-    values: string[];
+    values: any[];
 }

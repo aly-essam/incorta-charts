@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ColumnModel } from '../../models/column.model';
-import { ChartsService } from '../../services/charts.service';
-import { CdkDragDrop } from '@angular/cdk/drag-drop';
+import { CriteriaModel } from '../../models/criteria.model';
+import { DataModel } from '../../models/data.model';
+import { LineChartModel } from '../../models/line-chart.model';
+import { PlotterService } from './plotter.service';
 
 @Component({
   selector: 'app-plotter',
@@ -10,11 +12,18 @@ import { CdkDragDrop } from '@angular/cdk/drag-drop';
 })
 export class PlotterComponent implements OnInit {
   columnList: ColumnModel[];
-  constructor(private chartsService: ChartsService) { }
+  lineChartData: LineChartModel;
+  constructor(private plotterService: PlotterService) { }
 
   ngOnInit() {
-    this.chartsService.getColumnsList().subscribe(columnList => {
+    this.plotterService.getColumnsList().subscribe(columnList => {
       this.columnList = columnList;
+    });
+  }
+
+  onCriteriaCompletion(criteriaModel: CriteriaModel) {
+    this.plotterService.getCriteriaResult(criteriaModel).subscribe((criteriaResult: DataModel[]) => {
+      this.lineChartData = this.plotterService.prepareLineChartData(criteriaResult, criteriaModel);
     });
   }
 }

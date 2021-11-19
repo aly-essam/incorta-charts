@@ -1,5 +1,6 @@
-<div cdkDropListGroup>
-  <div>
-    <app-criteria [columnList]="columnList"></app-criteria>
-  </div>
+<div>
+  <app-criteria [columnList]="columnList" (criteriaCompleteEvent)="onCriteriaCompletion($event)"></app-criteria>
+</div>
+<div class="chart-container">
+  <app-line-chart [chartData]="lineChartData"></app-line-chart>
 </div>

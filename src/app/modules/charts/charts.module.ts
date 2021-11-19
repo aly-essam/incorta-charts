@@ -12,6 +12,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ChartsModule as ng2Charts } from 'ng2-charts';
+import { PlotterService } from './pages/plotter/plotter.service';
 
 @NgModule({
   declarations: [LineChartComponent, CriteriaComponent, PlotterComponent],
@@ -22,9 +24,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatButtonModule,
     MatIconModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ng2Charts
   ],
   providers: [{ provide: BASE_PATH, useValue: environment.chartsBaseUrl },
-    ChartsService],
+    ChartsService, PlotterService],
 })
 export class ChartsModule { }

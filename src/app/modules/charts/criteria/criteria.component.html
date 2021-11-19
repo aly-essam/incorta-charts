@@ -12,7 +12,7 @@
     <mat-label>Dimension</mat-label>
   <div cdkDropList #dimension="cdkDropList" [cdkDropListData]="dimensions" class="criteria-list"
     [cdkDropListEnterPredicate]="dimensionPredicate" (cdkDropListDropped)="drop($event)">
-    <div class="criteria-box" [cdkDragData]="dimension" *ngFor="let dimension of dimensions" cdkDrag>{{dimension.name}}
+    <div class="criteria-box" *ngFor="let dimension of dimensions">{{dimension.name}}
       <button class="clear-btn" matSuffix  aria-label="Clear" (click)="clearDimension(dimension)">
         Clear
       </button>
@@ -22,7 +22,7 @@
  <mat-label>Measure</mat-label>
   <div cdkDropList #measure="cdkDropList" [cdkDropListData]="measures" class="criteria-list"
     [cdkDropListEnterPredicate]="measurePredicate" (cdkDropListDropped)="drop($event)">
-    <div class="criteria-box" [cdkDragData]="measure" *ngFor="let measure of measures" cdkDrag>{{measure.name}}
+    <div class="criteria-box" *ngFor="let measure of measures">{{measure.name}}
       <button class="clear-btn" matSuffix  aria-label="Clear" (click)="clearMeasure(measure)">
         Clear
       </button>

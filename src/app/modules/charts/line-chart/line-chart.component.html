@@ -1,3 +1,10 @@
-<p>
-  line-chart works!
-</p>
+<div *ngIf="renderChart">
+  <canvas baseChart width="400" height="100"
+    [datasets]="lineChartMeasureData"
+    [labels]="lineChartDimensionValue"
+    [options]="lineChartOptions"
+    [colors]="lineChartColors"
+    [chartType]="lineChartType">
+  </canvas>
+  <div class="dimension-name">{{dimensionName}}</div>
+</div>
